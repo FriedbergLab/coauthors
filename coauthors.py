@@ -115,10 +115,10 @@ if __name__ == '__main__':
     """)
     parser = argparse.ArgumentParser()
     # group = parser.add_mutually_exclusive_group(required=True)
-    parser.add_argument('-n','--name',nargs='?',type=str, required=True, 
+    parser.add_argument('-n','--name',type=str, required=True, 
                        help="The name for which to find coauthors on publications")
     
-    parser.add_argument('-o','--outfile',nargs='?',type=argparse.FileType('wb'),
+    parser.add_argument('-o','--outfile',type=argparse.FileType('wb'),
                         required=True)
     parser.add_argument('-m','--email',required=True,
                         help="A valid email is required by Entrez")
