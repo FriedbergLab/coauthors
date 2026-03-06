@@ -1,7 +1,19 @@
 # coauthors
+
+`coauthors` finds all coauthors in PubMed for a given year range, and
+then outputs them to a csv, ods or Excel file.
+
+Useful for declaring conflict of interest in grant applications and for
+COI disclosures.
+
+Example:
+
+```
+coauthors -n "Iddo Friedberg" -m "idoerg@iastate.edu" -y 2021 2025 -o
+"IddoConflicts.xlsx" -t excel
+```
 ```
 usage: coauthors [-h] -n NAME -o OUTFILE -m EMAIL [-a AFFIL] [-y YEARS YEARS]
-                 [-s {Forward,Reverse,f,F,r,R,forward,reverse}] [-e [EXCLUDE]]
                  [-v] [-t {excel,csv}]
 
 options:
@@ -13,11 +25,6 @@ options:
   -y, --years YEARS YEARS
                         Two years for publication year range. Earliest is
                         1930, latest is one year in the future
-  -s, --datesort {Forward,Reverse,f,F,r,R,forward,reverse}
-                        Sort by publication year. Default: forward (ascending)
-                        publication year.
-  -e, --exclude [EXCLUDE]
-                        Journal titles to exclude
   -v, --verbose
   -t, --outtype {excel,csv}
 ```
